@@ -1,9 +1,8 @@
 import { MongoDataSource } from "apollo-datasource-mongo";
-import { Product } from "../mogoose.model";
-import { connectDB } from "../mongooseConnect";
+import { Product } from "./";
 import { Model, Document } from "mongoose";
 
-export class MongoDB extends MongoDataSource {
+export class MongoDBProductSource extends MongoDataSource {
 	constructor() {
 		super();
 		this.collections = [Product];

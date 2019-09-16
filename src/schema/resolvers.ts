@@ -1,4 +1,4 @@
-import { ProductT } from "../dataSources/Product";
+import { ProductT } from "../dataSources";
 
 const Query = {
 	readProduct: async (

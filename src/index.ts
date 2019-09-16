@@ -1,6 +1,6 @@
 import { ApolloServer } from "apollo-server-micro";
-import { MongoDB } from "./dataSources/Product";
-import { connectDB } from "./mongooseConnect";
+import { MongoDBProductSource } from "./dataSources";
+import { connectDB } from "./dataSources/mongooseConnect";
 import { schema } from "./schema";
 
 const apolloServer = new ApolloServer({
@@ -10,7 +10,7 @@ const apolloServer = new ApolloServer({
 	dataSources: () => ({
 		// datasources like to not be agreeable with typescript, so most authors of them don't bother with typings...
 		// Passing any here silences TSC - probably worth typing correctly in the future, but stable enough for now
-		products: <any>new MongoDB()
+		products: <any>new MongoDBProductSource()
 	})
 });
 
