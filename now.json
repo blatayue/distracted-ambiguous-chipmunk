@@ -4,15 +4,11 @@
     {
       "src": "src/*.ts",
       "use": "@now/node"
-    },
-    {
-      "src": "schema/*.graphql",
-      "use": "@now/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/graphql",
       "dest": "src/index.ts"
     }
   ]
